@@ -226,7 +226,7 @@ class ElementTypesPlugin extends Omeka_Plugin_AbstractPlugin
 
         $filter = $element_types_info[$type]['filters'][$name];
         $args['element_type_options'] = json_decode(
-            $element_type['element_type_options'], TRUE);
+            $element_type['element_type_options'] /? '', TRUE);
 
         return call_user_func($filter, $value, $args);
     }
